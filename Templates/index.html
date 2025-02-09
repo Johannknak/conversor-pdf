@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <title>Conversor Multifuncional</title>
+
+    <!-- Bootstrap CSS via CDN -->
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+    >
+    <!-- (Opcional) Bootstrap Icons -->
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    >
+
+    <style>
+        .form-section {
+            display: none; /* Todas escondidas inicialmente */
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <i class="bi bi-filetype-pdf"></i>
+            Super Conversor
+        </a>
+    </div>
+</nav>
+
+<div class="container">
+    <h1 class="mb-3">Conversor de PDFs e Imagens</h1>
+
+    <div class="mb-3">
+        <label for="conversionSelect" class="form-label">Escolha a conversão desejada:</label>
+        <select id="conversionSelect" class="form-select" onchange="showConversionForm()">
+            <option value="">-- Selecione --</option>
+            <option value="pdfToJpgSingleForm">PDF → JPG (1ª Página)</option>
+            <option value="pdfToJpgMultiForm">PDF → JPG (Todas as Páginas)</option>
+            <option value="pdfToTextForm">PDF → Texto</option>
+            <option value="imagesToPdfForm">Imagens → PDF</option>
+        </select>
+    </div>
+
+    <!-- 1) PDF -> JPG (1ª página) -->
+    <div id="pdfToJpgSingleForm" class="form-section card p-3 mb-4">
+        <h2 class="mb-3">PDF para JPG (1ª Página)</h2>
+        <form
+                action="/pdf_to_jpg_single"
+                method="POST"
+                enctype="multipart/form-data"
+                class="row g-3"
+        >
+            <div class="col-auto">
+                <label for="file_single" class="form-label">Selecione o PDF:</label>
+                <input
+                        type="file"
+                        name="file_single"
+                        id="file_single"
+                        accept=".pdf"
+                        class="form-control"
+                >
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mt-4">
+                    Converter (1ª página)
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- 2) PDF -> JPG (todas as páginas) -->
+    <div id="pdfToJpgMultiForm" class="form-section card p-3 mb-4">
+        <h2 class="mb-3">PDF para JPG (Todas as páginas)</h2>
+        <form
+                action="/pdf_to_jpg_multi"
+                method="POST"
+                enctype="multipart/form-data"
+                class="row g-3"
+        >
+            <div class="col-auto">
+                <label for="file_multi" class="form-label">Selecione o PDF:</label>
+                <input
+                        type="file"
+                        name="file_multi"
+                        id="file_multi"
+                        accept=".pdf"
+                        class="form-control"
+                >
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mt-4">
+                    Converter (todas)
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- 3) PDF -> Texto -->
+    <div id="pdfToTextForm" class="form-section card p-3 mb-4">
+        <h2 class="mb-3">PDF para Texto</h2>
+        <form
+                action="/pdf_to_text"
+                method="POST"
+                enctype="multipart/form-data"
+                class="row g-3"
+        >
+            <div class="col-auto">
+                <label for="file_text" class="form-label">Selecione o PDF:</label>
+                <input
+                        type="file"
+                        name="file_text"
+                        id="file_text"
+                        accept=".pdf"
+                        class="form-control"
+                >
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mt-4">
+                    Extrair Texto
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- 4) Imagens -> PDF -->
+    <div id="imagesToPdfForm" class="form-section card p-3 mb-4">
+        <h2 class="mb-3">Imagens para PDF</h2>
+        <p>Selecione uma ou várias imagens (JPG/PNG) para unir em um PDF.</p>
+        <form
+                action="/images_to_pdf"
+                method="POST"
+                enctype="multipart/form-data"
+                class="row g-3"
+        >
+            <div class="col-auto">
+                <label for="images_files" class="form-label">Selecione as imagens:</label>
+                <input
+                        type="file"
+                        name="images_files"
+                        id="images_files"
+                        accept="image/*"
+                        multiple
+                        class="form-control"
+                >
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mt-4">
+                    Gerar PDF
+                </button>
+            </div>
+        </form>
+    </div>
+</div><!-- /container -->
+
+<!-- Bootstrap JS -->
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+></script>
+
+<script>
+    function showConversionForm() {
+        // IDs das divs de formulário
+        const forms = [
+            "pdfToJpgSingleForm",
+            "pdfToJpgMultiForm",
+            "pdfToTextForm",
+            "imagesToPdfForm"
+        ];
+
+        // Esconde todas
+        forms.forEach((formId) => {
+            document.getElementById(formId).style.display = "none";
+        });
+
+        // Mostra só a selecionada
+        const selectedValue = document.getElementById("conversionSelect").value;
+        if (selectedValue) {
+            document.getElementById(selectedValue).style.display = "block";
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+MAT-27 - ´Algebra Linear
+Lista 8 - Segundo semestre de 2024
+Matriz de transforma¸ c˜ ao linear, posto
+Quest˜ ao 1. SejaT:R3→R3definida por T(x, y, z ) = (2 x+y+z,3x−y−z, x+y). Determine a matriz [ T]αβ,
+onde:
+(a)α={e1, e2, e3}, β={e1, e2, e3}.
+(b)α={(0,1,1),(1,0,1),(1,1,0)}, β={(0,1,1),(1,0,1),(1,1,0)}.
+Quest˜ ao 2. Determine o operador linear do R2cuja matriz em rela¸ c˜ ao ` a base {(1,2),(0,5)}´ e"
+3 1
+2−1#
+.
+Quest˜ ao 3. Considere a transforma¸ c˜ ao linear T(p(x)) = p′(x). Em cada um dos itens abaixo, V´ e o dom´ ınio,
+Wcontradom´ ınio, αbase para Veβ´ e base para W. Determine a matriz [ T]αβ.
+(a)V=P3(R), W=P2(R), α={x, x+x2, x2+x3, x3+ 1}, β={1, x, x2}.
+(b)V=W= [sen x,cosx],α=β={senx,cosx}.
+Quest˜ ao 4. SejaT:C3→C2definida por T(x, y, z ) = (2 x+ 3y−(i+ 1)z, ix−(2i+ 3)y+ 4z).
+(a)Considerando C3eC2comoC-espa¸ cos vetoriais, determine [ T]αβ, onde α={e1, e2, e3}eβ={e1, e2}.
+(b)Considere o mesmo do item (a) e determine [ T]αβ, onde α={e1+ie2, e2−ie3, e3}eβ={(i,1),(1, i)}.
+(c)Considerando C3eC2como R-espa¸ cos vetoriais, determine [ T]αβ, com α={e1, ie1, e2, ie2, e3, ie3}eβ=
+{e1, ie1, e2, ie2}.
+Quest˜ ao 5. Sejam SeToperadores lineares do R3tais que S(x, y, z ) = (x+z,2y, y−z) e a matriz de 2 S−T
+em rela¸ c˜ ao ` a base canˆ onica ´ e
+1 1 0
+0 1 0
+1 2 1
+.
+Determine a matriz de Tem rela¸ c˜ ao ` a base canˆ onica. Determine tamb´ em T(x, y, z ).
+Quest˜ ao 6. Considere o operador linear TdoR3definido por T(1,0,0) = (1 ,1,1),T(0,1,0) = (1 ,0,1) e
+T(0,0,1) = (0 ,0,4). Mostre que T´ e um isomorfismo e determine seu isomorfismo inverso.
+Quest˜ ao 7. Sejam V=P3(R), Ba base canˆ onica de VeT:V→Vdefinida por T(a0+a1x+a2x2+a3x3) =
+a0+a1x+a23
+2x2−1
+2
++a35
+2x3−3
+2x
+.
+(a)Mostre que T´ e isomorfismo e determine T−1, [T]Be
+T−1
+B.
+(b)Determine bases CeDdeVtais que [ T]BD=I4e [T]CB=I4.
+Quest˜ ao 8. SejaVum espa¸ co vetorial. Um operador linear T:V→V´ e chamado de nilpotente se existe um
+inteiro positivo ktal que Tk= 0 (operador nulo). Neste caso, o ´ ındice de nilpotˆ encia deT´ e o menor n´ umero
+inteiro positivo tal que isso ocorre, ou seja, Tk= 0 mas Tk−1̸= 0.
+(a)SeT:V→V´ e nilpotente de ´ ındice kev∈V´ e tal que Tk−1(v)̸= 0, mostre que
+B={v, T(v), T2(v), . . . , Tk−1(v)} ⊆V´ e L.I.
+(b)SeVtem dimens˜ ao finita n≥1 e T:V→V´ e nilpotente de ´ ındice n, mostre que
+B={v, T(v), T2(v), . . . , Tn−1(v)}´ e base de V, onde v∈Vsatisfaz Tn−1(v)̸= 0, e determine [ T]Be o
+posto de T.
+1
+2
+Quest˜ ao 9. Considere a transforma¸ c˜ ao linear T:R4→R4dada por T(x1, x2, x3, x4) = (0 ,−2x1, x2,2x4) e o
+subespa¸ co de R4:W= [(1 ,0,0,0),(0,1,0,0),(0,0,1,0)].
+(a)Mostre que T(W)⊆W.
+(b)Mostre que a restri¸ c˜ ao T|W:W→W´ e nilpotente de ´ ındice 3 (veja defini¸ c˜ ao na Quest˜ ao 8).
+(c)Determine uma base BdeW, e uma base CdeVque contenha B, de modo que
+[T]C=
+0 0 0 0
+1 0 0 0
+0 1 0 0
+0 0 0 2
+.
+Quest˜ ao 10. Um operador linear p:V→V´ e chamado de proje¸ c˜ ao sep2=p. Sejam VumK-espa¸ co vetorial
+de dimens˜ ao finita nep:V→Vuma proje¸ c˜ ao.
+(a)Mostre que v∈Impse, e somente se, p(v) =v.
+(b)Mostre que V= ker p⊕Imp.
+(c)Mostre que existe uma base BdeVtal que [ p]B="
+Ik 0k,n−k
+0n−k,k 0n−k#
+,onde k´ e o posto de p.
+(d)Conclua que se A∈Mn(K) ´ e tal que A2=A, ent˜ ao A´ e semelhante a matriz"
+Ik 0k,n−k
+0n−k,k 0n−k#
+,onde k
+´ e o posto de A.
+Quest˜ ao 11. Sejam VumK-espa¸ co vetorial de dimens˜ ao finita e U, W dois subespa¸ cos de Vtais que V=U⊕W.
+Defina p:V→Vda seguinte maneira: dado v=u+wcomu∈Uew∈W,p(v) =w. Mostre que:
+(a)p2=p, isto ´ e, p´ e uma proje¸ c˜ ao;
+(b)U= ker peW= Im p;
+(c)seVtem produto interno e U=W⊥, ent˜ ao para todo v∈V,p(v) ´ e a proje¸ c˜ ao ortogonal de vemW.
+3
+Respostas
+Quest˜ ao 1
+(a)
+2 1 1
+3−1−1
+1 1 0
+ (b)
+−3/2 0 1 /2
+5/2 1 3 /2
+−1/2 2 3 /2
+
+Quest˜ ao 2
+T(x, y) =13
+5x+1
+5y,86
+5x−3
+5y
+Quest˜ ao 3
+(a)
+1 1 0 0
+0 2 2 0
+0 0 3 3
+ (b)"
+0−1
+1 0#
+Quest˜ ao 4
+(a)"
+2 3 −1−i
+i−2i−3 4#
+(b)"
+5/2−2i−1−4i3/2 +i/2
+i/2−2 + 2 i−1/2−5i/2#
+(c)
+2 0 3 0 −1 1
+0 2 0 3 −1−1
+0−1−3 2 4 0
+1 0 −2−3 0 4
+
+Quest˜ ao 5
+T(x, y, z ) = (x−y+ 2z,3y,−x−3z)
+Quest˜ ao 6
+T−1(x, y, z ) =
+y, x−y,−x
+4+z
+4
+Quest˜ ao 7
+(a)[T]B=
+1 0 −1/2 0
+0 1 0 −3/2
+0 0 3 /2 0
+0 0 0 5 /2
+,[T−1]B=
+1 0 1 /3 0
+0 1 0 3 /5
+0 0 2 /3 0
+0 0 0 2 /5
+,
+T−1(a0+a1x+a2x2+a3x3) =a0+a1x+a21
+3+2
+3x2
++a33
+5x+2
+5x3
+(b)D=
+1, x,3
+2x2−1
+2,5
+2x3−3
+2x
+, C =
+1, x,1
+3+2
+3x2,3
+5+2
+5x3
+Quest˜ ao 8
+(b)[T]B=
+0 0 ···0 0
+1 0 ···0 0
+0 1 ···0 0
+.........
+0 0 ···1 0
+,posto( T) =n−1.
+Quest˜ ao 9
+(c)B={(−1/2,0,0,0),(0,1,0,0),(0,0,1,0)}eC=B∪ {(0,0,0,1)}.
